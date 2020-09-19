@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'merlindjango/navbar.html' %}
+{% load static %}
+{% block description_active %}active{% endblock %}
+
+
+{% block body %}
+    <div style="max-width: 62%; margin: auto">
+        <h1 style="text-align: center"><b>Description</b></h1>
+        <hr>
+        <h2>Description</h2>
+        <h3><i>merlin</i></h3>
+        <p>
+            The Metabolic Models Reconstruction Using Genome-Scale Information (merlin) tool is an user-friendly Java application that performs the reconstruction of genome-scale metabolic models for any organism that has its genome sequenced. It performs the major steps of the reconstruction process, including the functional genomic annotation of the whole genome and subsequent construction of the portfolio of reactions. Moreover, merlin includes tools for the identification and annotation of genes encoding transport proteins, generating the transport reactions for those carriers. It also performs the compartmentalisation of the model, predicting the organelle localisation of the proteins encoded in the genome, and thus the localisation of the metabolites involved in the reactions promoted by such enzymes. The gene to proteins to reactions (GPR) associations are automatically generated and included in the model. Finally, merlin expedites the transition from genome-scale reconstructions to draft metabolic models exported in the SBML standard format, allowing the user to have a preliminary view of the biochemical network.
+        </p>
+        <br>
+        <div style="text-align: center">
+            <img src="{% static "images/Merlin.png" %}" alt="Merlin" width="70%" height="100%">
+        </div>
+        <br>
+        <br>
+        <h3><i>TRIAGE</i></h3>
+        <p>
+            Usually, transport reactions are added to genome-scale metabolic (GSM) models based on experimental data and literature. This approach does not allow associating specific genes with transport reactions, which impairs the ability of the model to predict effects of gene deletions. Novel methods for systematic genome-wide transporter functional annotation and their integration into GSM models are therefore necessary. TRIAGE is an automatic system to detect and classify all potential membrane transport proteins for a given genome and integrate the related reactions into GSM models is proposed, based on the identification and classification of genes that encode transmembrane proteins. The Transport Reactions Annotation and Generation (TRIAGE) tool identifies the metabolites transported by each transmembrane protein and its transporter family. The localization of the carriers is also predicted and, consequently, their action is confined to a given membrane. The integration of the data provided by Triage with highly curated models allowed the identification of new transport reactions. TRIAGE is included in the new release of merlin.
+        </p>
+        <br>
+        <div style="text-align: center">
+            <img alt="Triage" src="{% static "images/Triage.png" %}" width="70%" height="100%">
+        </div>
+        <br>
+        <h3>GitHub</h3>
+        <p>
+            <i>merlin</i> is at
+            <img alt="merlin@GitHub" src="{% static "images/150px-Github.png" %}" width="100" height="86">
+        </p>
+        <br>
+        <br>
+    </div>
+{% include 'merlindjango/footer.html' %}
+
+{% endblock %}

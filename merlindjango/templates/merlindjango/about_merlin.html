@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends 'merlindjango/navbar.html' %}
+{% load static %}
+{% block aboutmerlin_active %}active{% endblock %}
+
+<!-- sublime text -->
+<!-- wordpress -->
+{% block body %}
+    <div style="max-width: 62%; margin: auto">
+        <h1 style="text-align: center"><b>About</b></h1>
+        <hr>
+        <h2>How to cite <i>merlin</i></h2>
+        <h3>Original publication</h3>
+        <p>
+            <a rel="nofollow" class="external text" href="http://nar.oxfordjournals.org/lookup/doi/10.1093/nar/gkv294">Dias, O., Rocha, M., Ferreira, E.C. and Rocha, I. (2015) Reconstructing genome-scale metabolic models with merlin. Nucleic Acids Res., 10.1093/nar/gkv294.
+            </a>
+            <br>
+        </p>
+        <h2>Supported by</h2>
+        <div style="text-align: center">
+            <img alt="CEB" src="{% static "images/750px-CEB.png" %}" width="45%" height="100%">
+            <br>
+            <br>
+            <br>
+            <img alt="EENG" src="{% static "images/EENG.gif" %}" width="30%" height="100%">
+        </div>
+        <h2>Acknowledgements</h2>
+        <p>This project was supported by the Portuguese Foundation for Science and Technology (FCT) under the scope of the strategic funding of UID/BIO/04469/2013 unit and COMPETE 2020 (POCI-01-0145-FEDER-006684) and MIT-Pt/BS-BB/0082/2008 (FCOMP-01-0124-FEDER-008433).
+            <br>
+        </p>
+        <h3>FCT</h3>
+        <div style="text-align: center">
+            <img alt="FCT" src="{% static "images/1500px-FCT.png" %}" width="90%" height="100%">
+        </div>
+        <br>
+        <h3>COMPETE</h3>
+        <div style="text-align: center">
+            <img alt="Compete" src="{% static "images/750px-Compete.gif" %}" width="40%" height="100%">
+        </div>
+        <br>
+        <h3>PEM</h3>
+        <p>
+            <i>merlin</i>'s developers acknowledge PEM Metabolic Engineering Platform, project number 23060, co-funded by the Programa Operacional Regional do Norte (ON.2 O Novo Norte), QREN, FEDER.
+        </p>
+        <br>
+        <br>
+        <div style="text-align: center">
+            <img alt="PEM" src="{% static "images/PEM.png" %}" width="70%" height="100%">
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+{% include 'merlindjango/footer.html' %}
+
+{% endblock %}

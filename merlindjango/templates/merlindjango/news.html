@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'merlindjango/navbar.html' %}
+{% load static %}
+{% block news_active %}active{% endblock %}
+
+
+{% block body %}
+    <div style="max-width: 62%; margin: auto; word-wrap: break-word">
+        <h1 style="text-align: center"><b>News</b></h1>
+        <hr>
+        <div style="text-align: center">
+            <img src="{% static "images/Merlin.png" %}" alt="Merlin" width="55%" height="100%">
+        </div>
+        <br>
+        {% for noticias in noticia %}
+        <h3>{{ noticias.titulo_noticia }}</h3>
+        <p>{{ noticias.texto }}</p>
+        {% if noticias.imagem_noticia %}
+        <br>
+        <img src="{{ noticias.imagem_noticia.url }}" alt="" width="90%" height="90%">
+        <br>
+        <br>
+        {% endif %}
+        <p>Submited on: {{ noticias.created_at }}</p>
+        {% endfor %}
+        <br>
+
+    </div>
+{% include 'merlindjango/footer.html' %}
+
+{% endblock %}

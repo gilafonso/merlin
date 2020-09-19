@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends 'merlindjango/navbar.html' %}
+{% block downloads_active %}active{% endblock %}
+
+
+{% block body %}
+    <div style="max-width: 62%; margin: auto; word-wrap: break-word">
+        <h1 style="text-align: center"><b>Downloads</b></h1>
+        <hr>
+        <h2>Please cite using</h2>
+        <p><a rel="nofollow" class="external text" href="http://nar.oxfordjournals.org/lookup/doi/10.1093/nar/gkv294">Dias, O., Rocha, M., Ferreira, E.C. and Rocha, I. (2015) Reconstructing genome-scale metabolic models with merlin. Nucleic Acids Res., 10.1093/nar/gkv294.</a>
+        </p>
+        <p><a rel="nofollow" class="external text" href="http://dx.doi.org/10.1109/TCBB.2016.2527647">Dias, O., Gomes, D., Vilaca, P., Cardoso, J., Rocha, M., Ferreira, E., &amp; Rocha, I. (2016). Genome-wide Semi-automated Annotation of Transporter Systems. IEEE/ACM Transactions on Computational Biology and Bioinformatics / IEEE, ACM, (1), 1–1. http://doi.org/10.1109/TCBB.2016.2527647</a>
+        </p>
+        <br>
+        <h2>Downloads</h2>
+        <br>
+        <p><i><b>merlin</b></i> is available for download in a single multi-platform version.
+        </p>
+        {% for downloads in download %}
+        <ul><li> {{ downloads.titulo_versao }}
+        <ul><li> <a rel="nofollow" class="external text" href="{{ downloads.update_ficheiro.url }}" target="_blank" download>download</a></li></ul></li></ul>
+        <ul>Submitted on: {{ downloads.created_at }}</ul>
+        {% endfor %}
+{#        <ul><li> <i>merlin 4.0.4 - beta</i> - <i>NEW</i> (06/07/2020)#}
+{#        <ul><li> <a rel="nofollow" class="external text" href="https://www.merlin-sysbio.org/data/releases/merlin-gui-4.0.4-RELEASE-beta.zip">merlin</a></li></ul></li></ul>#}
+{#        <p><b>Previous versions</b></p>#}
+{#        <ul><li> <i>merlin 4.0.3 - beta - </i>(27/05/2020)#}
+{#        <ul><li> <a rel="nofollow" class="external text" href="https://www.merlin-sysbio.org/data/releases/merlin-gui-4.0.3-RELEASE-beta.zip">merlin</a></li></ul></li></ul>#}
+{#        <ul><li> <i>merlin 4.0.2 - beta</i>#}
+{#        <ul><li> <a rel="nofollow" class="external text" href="https://www.merlin-sysbio.org/data/releases/merlin-gui-4.0.2-RELEASE-beta.zip">merlin</a></li></ul></li></ul>#}
+
+        <h2>Known issues</h2>
+        <ul><li> Plugin <i><b>merlin</b></i>-addons installed prior to version 4.0.2 might stop <i><b>merlin'</b></i>s launch after an update. To solve this issue, please delete the file merlin-addons*.jar from directory [merlin_home]/plugins_bin. After completing this step, <i><b>merlin</b></i> should launch normally.</li></ul>
+        <br>
+        <ul><li> <b>How can I recover my workspaces if <i>merlin</i> does not launch?</b>
+        <ul><li> <b>Step 1 -</b> Download the latest version available in this page. Do not launch <i>merlin</i> until step 4.</li>
+        <li> <b>Step 2 -</b> Copy the directories [merlin_home]/h2Database and [merlin_home]/ws from your previous <i>merlin</i> version.</li>
+        <li> <b>Step 3 -</b> Paste both directories in <i>merlin</i>´s version downloaded from the website. These directories should not exist if <i>merlin</i> was not launched yet.</li>
+        <li> <b>Step 4 -</b> Launch <i>merlin</i>. All workspaces should be available now.</li></ul></li></ul>
+        <br>
+        We are currently working hard on finding a solution for these issues and we shall release a more stable version soon. Thank you for your patience!
+        <h2>System requirements</h2>
+        <p>The current version of merlin requires:</p>
+        <ul><li> <i>Processor:</i> Reasonably powerful x64 hardware. Any recent Intel or AMD processor should do.</li></ul>
+        <ul><li> <i>Memory:</i> 1GB memory (most operations use less than 1GB, however the local alignments may take up to 3GB)</li></ul>
+        <ul><li> <i>Java version:</i> above JRE 1.8
+        <ul><li> <i>Disclaimer:</i> more recent versions of Java (above 10) may cause stability issues</li></ul></li></ul>
+        <ul><li> <i>OS:</i> Windows (XP or later), Unix (Ubuntu or macOS), </li></ul>
+        <br>
+        <h2>Changelog</h2>
+        <ul><li>Any bugs or suggestions please email us at:
+        <ul><li>support@merlin-sysbio.org</li></ul></li>
+        <li> Changelog history
+        <ul><li> <a rel="nofollow" class="external text" href="https://www.merlin-sysbio.org/files/changelog.txt">changelog</a></li></ul></li></ul>
+        <hr>
+        <div style="font-size:88%; line-height: 1.3em;" align="right">Application icons: <a rel="nofollow" class="external free" href="https://www.flaticon.com">https://www.flaticon.com</a></div>
+        <br>
+    </div>
+{% include 'merlindjango/footer.html' %}
+
+{% endblock %}

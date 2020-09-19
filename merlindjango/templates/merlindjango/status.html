@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="refresh" content="10;url={% url 'merlindjango:memote_status' email submissionID %}">
+    <title>merlin</title>
+{#    <link rel="stylesheet" href="{{ url_for('static', filename='css/center.css') }}">#}
+{#    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">#}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Oxygen&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+
+<div class="center" align="center" style="border: 0">
+    <h1 style="color: #34495e"><b><i>merlin</i> GSM model <i>MEMOTE</i></b></h1>
+    <br>
+    <br>
+{#    <img src="{{ url_for('static', filename = 'images/biocoiso.gif') }}" alt="BioISO" height="325px">    <br>#}
+    <br>
+    <h3><b>Status report</b></h3>
+    <p>Submission ID: {{submissionID}}</p> <br>
+{#    {% if status["queue"] %}#}
+{#        <h3>{{status["queue"]}}</h3>#}
+{#    {% endif %}#}
+{#    {% if status["message"] %}#}
+{#        <h3>{{status["message"]}}</h3>#}
+{#    {% endif %}#}
+    <br>
+	<h3>This page refreshes automatically, 10 seconds at a time. Please wait for your download to be ready!</h3>
+    <h3>Otherwise, you can consult your results later in the home page. For that, you must keep the submission ID and e-mail provided at the time of the submission.</h3>
+</div>
+
+{#<div class="footer">#}
+{##}
+{#    <table>#}
+{#        <tr>#}
+{#            <th><a href="{{url_for('index')}}">BioISO 2019</a> <br>#}
+{#                by <a href="https://www.ceb.uminho.pt/People/Profile/fernandocruz" target="_blank">Fernando Cruz</a>,#}
+{#                <a href="https://www.ceb.uminho.pt/People/Profile/davidelagoa" target="_blank">Davide Lagoa</a>, <br>#}
+{#                <a href="https://www.ceb.uminho.pt/People/Profile/joaoribeiro" target="_blank">João Capela</a> and#}
+{#                <a href="https://www.ceb.uminho.pt/People/Profile/odias" target="_blank">Oscar Dias</a>#}
+{#            </th>#}
+{#            <th><a href="https://www.eng.uminho.pt/en" target="_blank"> <img border="0" alt="School of Engineering" src="{{ url_for('static', filename = 'images/EENG.jpg') }}"></a></th>#}
+{#            <th><a href="https://www.ceb.uminho.pt/" target="_blank"> <img border="0" alt="Centre of Biological Engineering" src="{{ url_for('static', filename = 'images/ceb1.png') }}"></a></th>#}
+{#            <th><a href="https://www.elixir-portugal.org/" target="_blank"> <img border="0" alt="BioData" src="{{ url_for('static', filename = 'images/biodata_elixir.png') }}"></a></th>#}
+{#        </tr>#}
+{#    </table>#}
+
+{#</div>#}
+
+</body>
+</html>

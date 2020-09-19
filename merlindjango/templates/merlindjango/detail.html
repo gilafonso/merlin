@@ -1,0 +1,17 @@
+{% extends 'merlindjango/navbar.html' %}
+{% block title %}Noticias{% endblock %}
+
+{% block body %}
+    <img src="{{ noticias.imagem_noticia }}" alt="">
+
+    <h1>{{ noticias.titulo_noticia }}</h1>
+    <h3>{{ noticias.autor }}</h3>
+
+    <ul>
+        {% for news in noticias.todas_noticias_set.all %}
+            <li>{{ news.sub_titulo }} - {{ news.tipo_ficheiro }}</li>
+        {% endfor %}
+    </ul>
+{% include 'merlindjango/footer.html' %}
+
+{% endblock %}

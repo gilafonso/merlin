@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends 'merlindjango/navbar.html' %}
+{% load static %}
+{% block gsmmodels_active %}active{% endblock %}
+<link rel="stylesheet" href="../../static/merlindjango/css/table.css"/>
+
+
+{% block body %}
+
+    <div style="max-width: 62%; margin: auto">
+        <h1 style="text-align: center"><b>Models Repository</b></h1>
+        <hr>
+        <a  href="{% url 'merlindjango:submit_model' %}" class="btn btn-primary btm-sm" style="background-color: cornflowerblue; border: 0"> Submit Model </a>
+        <hr>
+        {% if submittedHTML %}
+        <p>Model submitted successfully!</p>
+        {% elif delete_model %}
+        <p>Model deleted successfully!</p>
+        {% endif %}
+
+        <table class="table" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Organism</th>
+                    <th>Publication</th>
+                    <th>Year</th>
+                    <th>Public</th>
+                    <th>File</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for models in model %}
+                <tr>
+                    <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:80px;">{{ models.name}} &nbsp;</td>
+                    <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">{{ models.organism}} &nbsp;</td>
+                    <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">{{ models.publication}} &nbsp;</td>
+                    <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:40px;">{{ models.year}} &nbsp;</td>
+                    <td>{{ models.is_public }}</td>
+                    <td><a  href="{{ models.file.url }}" class="btn btn-primary btm-sm" target="_blank" style="background-color: darkcyan; border: 0" download> Download </a> </td>
+                    <td><a  href="{% url 'merlindjango:submitMemote' models.id_modelo %}" class="btn btn-primary btm-sm" target="_blank" style="background-color: #2a7bb8; border: 0"> Memote </a> </td>
+                    {% if request.user == models.user or request.user.is_superuser%}
+                    <td><a href="{% url 'merlindjango:delete_model' models.id_modelo %}" class="btn btn-primary btm-sm" style="background-color: darkred; border: 0" onclick="return confirm('Are you sure you want to delete this model?')"> Delete </a> </td>
+                    <td><a  href="{% url 'merlindjango:edit_model' models.id_modelo %}" class="btn btn-primary btm-sm" style="background-color:coral; border: 0"> Edit </a> </td>
+                    {% endif %}
+                    {% if request.user != models.user %}
+                    <td></td>
+                    <td></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% include 'merlindjango/footer.html' %}
+{% endblock %}

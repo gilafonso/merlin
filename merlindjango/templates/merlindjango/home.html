@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% extends 'merlindjango/navbar.html' %}
+{% load static %}
+{% block home_active %}active{% endblock %}
+
+
+{% block body %}
+
+    {% if userId %}
+    <h1>Welcome {{ userName }}</h1>
+    {%   endif%}
+    <div style="max-width: 62%; margin: auto">
+        <h1 style="text-align: center"><b>Home</b></h1>
+        <hr>
+        <div style="text-align: center">
+            <img src="{% static "images/Merlin.png" %}" alt="Merlin" width="55%" height="100%">
+        </div>
+        <br>
+        <h2>Latest News</h2>
+        <h3>S2M2 - Summer School in Metabolic Modeling (29 June - 3 July 2020) - 2nd Edition!!!</h3>
+        <p>
+            BioSystems group is organizing for the second time a 5-day course on metabolic modelling – Summer School in Metabolic Modeling. The course will cover the full process from model reconstruction to phenotype prediction using genome-scale metabolic models.
+            <br>
+            The focus of this course will be on user-friendly tools for genome-scale metabolic model reconstruction (<i>merlin</i>) and simulation (<i>Optflux</i>) as to introduce alternatives to improve those models with omics data integration.
+            <br>
+            See more at <a rel="nofollow" class="external free" href="http://s2m2.bio.di.uminho.pt/">http://s2m2.bio.di.uminho.pt/
+            </a>
+        </p>
+        <br>
+        <img src="{% static "images/S2m2_2020.png "%}" alt="S2m2 2020" width="90%" height="90%">
+        <br>
+        <h3>A new tutorial is available for <i>merlin</i></h3>
+        <p>
+            We have implemented an extensive hands-on tutorial for <i>merlin</i>, which follows every step towards the reconstruction of a genome-scale metabolic model.
+            <br>
+            To access it, please click on the tutorial section on this website's upper navigation bar.
+        </p>
+        <br>
+        <h2><i>merlin</i></h2>
+        <p>
+            <i>merlin</i> is a simple, graphical and user-oriented solution for the reconstruction of genome-scale metabolic models.
+        </p>
+        <p>
+            It will guide you along the model reconstruction, providing several tools that help to improve and curate the model throughout the whole process.
+        </p>
+        <img alt="Reconstruction" src="{% static "images/1200px-Reconstruction.png" %}" width="800" height="450">
+        <br>
+        <h2>Ongoing work</h2>
+        <p>
+            We are currently working on the following features and will release a new version of <i><b>merlin</b></i> in the near future:
+        </p>
+        <ul>
+            <li> Integration of <i>modelSEED</i> metabolic data.</li>
+            <li> Integration of <i>BIGG</i> metabolic data.</li>
+            <li> Development of a plugin towards the integration of regulatory data.</li>
+        </ul>
+        <br>
+        <h2>Getting Started</h2>
+        <ul>
+            <li> <a rel="nofollow" class="external text" href="{% url "merlindjango:tutorial" %}">How to use merlin</a></li>
+            <li> <a rel="nofollow" class="external text" href="{% url "merlindjango:downloads" %}">Downloading merlin</a></li>
+        </ul>
+        <br>
+    </div>
+{% include 'merlindjango/footer.html' %}
+
+{% endblock %}
